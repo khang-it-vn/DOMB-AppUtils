@@ -4,8 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/activity_detail_repairer.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_history.xml" value="0.253125" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_home.xml" value="0.253125" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_profile.xml" value="0.253125" />
         <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/menu/menu_bottom_navigation_bar.xml" value="0.25416666666666665" />
       </map>
     </option>
