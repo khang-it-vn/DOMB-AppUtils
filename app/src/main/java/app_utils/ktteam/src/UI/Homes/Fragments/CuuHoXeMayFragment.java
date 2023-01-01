@@ -11,13 +11,12 @@ import androidx.fragment.app.Fragment;
 
 import app_utils.ktteam.src.R;
 
-public class ProfileFragment extends Fragment {
+public class CuuHoXeMayFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_profile,container,false);
-        return view;
+        View view = inflater.inflate(R.layout.fragment_cuu_ho_xemay,container,false);
+        return  view;
     }
 }

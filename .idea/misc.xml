@@ -3,14 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/drawable/border_icon_options.xml" value="0.2585" />
         <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/activity_detail_repairer.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_cuu_ho_oto.xml" value="0.253125" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_cuu_ho_xemay.xml" value="0.253125" />
         <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_history.xml" value="0.253125" />
-        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_home.xml" value="0.253125" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_profile.xml" value="0.253125" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_sua_dien.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_sua_nuoc.xml" value="0.253125" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_sua_oto.xml" value="0.253125" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_sua_xe.xml" value="0.253125" />
+        <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/layout/fragment_tram_xang.xml" value="0.253125" />
         <entry key="..\:/Users/nguye/Documents/DOAN_MOBILE/app/src/main/res/menu/menu_bottom_navigation_bar.xml" value="0.25416666666666665" />
       </map>
     </option>
