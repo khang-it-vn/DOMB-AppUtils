@@ -5,12 +5,33 @@ import java.util.UUID;
 
 public class Repairer extends Person{
     private UUID id;
-    public boolean trangThaiHoatDong;
+    private boolean trangThaiHoatDong;
 
-    public Repairer(String hoTen, String diaChi, boolean gioiTinh, Date dob, String numberPhone, String email, String avatar, String matKhau, UUID id, boolean trangThaiHoatDong) {
+    private double latitude;
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    private double longitude;
+
+    public Repairer(String hoTen, String diaChi, boolean gioiTinh, Date dob, String numberPhone, String email, String avatar, String matKhau, UUID id, boolean trangThaiHoatDong, double longitude) {
         super(hoTen, diaChi, gioiTinh, dob, numberPhone, email, avatar, matKhau);
         this.id = id;
         this.trangThaiHoatDong = trangThaiHoatDong;
+        this.longitude = longitude;
     }
 
     public Repairer() {
