@@ -34,6 +34,6 @@ public class ViewPaperAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 3; // số lượng fragment
+        return 4; // số lượng fragment
     }
 }
