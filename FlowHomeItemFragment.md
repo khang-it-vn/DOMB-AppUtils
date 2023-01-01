@@ -3,13 +3,13 @@
 ![image](https://user-images.githubusercontent.com/84958646/210164437-37b49df5-0e29-47c2-9b5d-c8bd87987d81.png)
 
 Ta có các fragment sau:
-  SuaDienFragment   ==> Layout: fragment_sua_dien
-  SuaNuocFragment   ==> Layout: fragment_sua_nuoc
-  SuaXeFragment     ==> Layout: fragment_sua_xe
-  TramXangFragment  ==> Layout: fragment_tram_xang
-  SuaOtoFragment    ==> Layout: fragment_sua_oto
-  CuuHoOtoFragment  ==> Layout: fragment_cuu_ho_oto
-  CuuHoXeMayFragment ==> Layout: fragment_cuu_ho_xemay
+  SuaDienFragment   ==> Layout: fragment_sua_dien \n 
+  SuaNuocFragment   ==> Layout: fragment_sua_nuoc \n
+  SuaXeFragment     ==> Layout: fragment_sua_xe \n
+  TramXangFragment  ==> Layout: fragment_tram_xang \n
+  SuaOtoFragment    ==> Layout: fragment_sua_oto \n
+  CuuHoOtoFragment  ==> Layout: fragment_cuu_ho_oto \n
+  CuuHoXeMayFragment ==> Layout: fragment_cuu_ho_xemay  \n
 
 
 ## 2. Set sự kiện cho mỗi item khi được click hiển thị fragment tương ứng
