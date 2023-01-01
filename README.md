@@ -84,6 +84,25 @@ App tiện ích cuộc sống, đồ án môn lập trình di động nên chư�
       Trong quá trình sử dụng ứng dụng, người dùng có thể gửi góp ý về quá trình sử dụng chương trình cho nhà phát triển
       để cải thiện sản phẩm tốt hơn.
       
+ ## 7. Tìm kiếm thợ sửa chữa gần đây
+      
+      UI FLow:
+      Khi người dùng nhấn vào item sửa điện, sẽ hiển thị danh sách các thợ sửa chữa gần đây đang hoạt động
+      
+      API:
+      ==> Method: [GET] 
+      ==> URL:    domain/v1/api/User/GetRepairerArround
+      ==> Param:  @diaChi: String
+
+      Response: 
+              {
+                Data= success ?  @List<RepairerDistance> : null,
+                Message= "Get Repairer Arround",
+                Success =  true 
+              }
+      
+      
+      
 ## Chức năng của thợ sửa chữa
 > Thợ sửa chữa
 ## 1. Đăng nhập
@@ -145,7 +164,6 @@ App tiện ích cuộc sống, đồ án môn lập trình di động nên chư�
                 Success = success ? true : false
               }
               
-      
       
       
       
