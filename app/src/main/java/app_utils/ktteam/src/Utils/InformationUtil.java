@@ -12,6 +12,7 @@ public class InformationUtil {
     public final static String FileSDT = "SoDienThoai.txt";
     public final static String FileDiaChi = "DiaChi.txt";
     public final static String FileEmail = "Email.txt";
+    public final static String FileUid = "Uid.txt";
 
 
     public static void writeToFile(String data,  FileOutputStream fos) {
