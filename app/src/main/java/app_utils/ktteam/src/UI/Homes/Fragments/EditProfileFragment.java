@@ -3,6 +3,7 @@ package app_utils.ktteam.src.UI.Homes.Fragments;
 import static android.content.Context.MODE_PRIVATE;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,16 +20,25 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import java.io.FileNotFoundException;
+import java.util.UUID;
 
+import app_utils.ktteam.src.Apis.ApiService;
+import app_utils.ktteam.src.Apis.Prototypes.DataUserApiResponse;
+import app_utils.ktteam.src.Models.UserEditProfileModel;
 import app_utils.ktteam.src.R;
+import app_utils.ktteam.src.UI.Account.Login;
 import app_utils.ktteam.src.Utils.InformationUtil;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class EditProfileFragment extends Fragment {
 
     ImageView imgEditProfile;
     EditText edtNameProfile, edtDiaChiProfile, edtEmailProfile;
     Button btnChangeInforEditProfile;
-    TextView txtNameEditProfile;
+    TextView txtNameEditProfile, txtThieuThongTin;
+    UUID uuid;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,6 +50,7 @@ public class EditProfileFragment extends Fragment {
     }
 
     public  void init(View view){
+
         imgEditProfile = view.findViewById(R.id.imgEditFace);
         edtDiaChiProfile = view.findViewById(R.id.edtDiaChiEditProfile);
         edtNameProfile = view.findViewById(R.id.edtNameEditProfile);
@@ -46,6 +58,7 @@ public class EditProfileFragment extends Fragment {
         edtEmailProfile = view.findViewById(R.id.edtEmailEditProfile);
         btnChangeInforEditProfile = view.findViewById(R.id.btnChangeInforEditProfile);
         txtNameEditProfile = view.findViewById(R.id.txtNameEditProfile);
+        txtThieuThongTin = view.findViewById(R.id.txtThieuThongTinEditProfile);
         try {
             edtDiaChiProfile.setText(InformationUtil.readToFile(getActivity().openFileInput(InformationUtil.FileDiaChi)));
 
@@ -53,7 +66,7 @@ public class EditProfileFragment extends Fragment {
             edtNameProfile.setText(name);
             edtEmailProfile.setText(InformationUtil.readToFile(getActivity().openFileInput(InformationUtil.FileEmail)));
             txtNameEditProfile.setText(name);
-
+            uuid = UUID.fromString(InformationUtil.readToFile(getActivity().openFileInput(InformationUtil.FileUid)));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -68,6 +81,10 @@ public class EditProfileFragment extends Fragment {
                 String name = edtNameProfile.getText().toString().trim();
 
                 String email = edtEmailProfile.getText().toString().trim();
+                if(name.length() == 0 || diaChi.length() == 0 || name.length() == 0 || email.length() == 0){
+                    txtThieuThongTin.setText("Vui lòng không để trống thông tin");
+                    return;
+                }
                 try {
                     InformationUtil.writeToFile(diaChi, getActivity().openFileOutput(InformationUtil.FileDiaChi, MODE_PRIVATE));
                     InformationUtil.writeToFile(name, getActivity().openFileOutput(InformationUtil.FileHoTen, MODE_PRIVATE));
@@ -76,6 +93,8 @@ public class EditProfileFragment extends Fragment {
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
+                CallAPI(diaChi, name, email);
+                btnChangeInforEditProfile.setVisibility(View.INVISIBLE);
                 FragmentTransaction trans = getFragmentManager().beginTransaction();
                 trans.replace(fragment, InstanceFragment);
                 trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
@@ -84,11 +103,23 @@ public class EditProfileFragment extends Fragment {
         });
     }
 
-    private void CallAPI ()
+    private void CallAPI (String diaChi, String name, String email)
     {
-        String diaChi = edtDiaChiProfile.getText().toString().trim();
-        String name = edtNameProfile.getText().toString().trim();
-        String email = edtEmailProfile.getText().toString().trim();
+        ApiService.apiService.updateInformation(new UserEditProfileModel(uuid, name, diaChi, email)).enqueue(new Callback<DataUserApiResponse>() {
+            @Override
+            public void onResponse(Call<DataUserApiResponse> call, Response<DataUserApiResponse> response) {
+                DataUserApiResponse res = response.body();
+                if(res== null || !res.isSuccess())
+                {
+                    return;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DataUserApiResponse> call, Throwable t) {
+
+            }
+        });
 
     }
 }

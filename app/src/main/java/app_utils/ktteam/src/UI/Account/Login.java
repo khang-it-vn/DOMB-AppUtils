@@ -68,6 +68,7 @@ public class Login extends AppCompatActivity {
                       InformationUtil.writeToFile(res.getData().getDiaChi().trim(), openFileOutput(InformationUtil.FileDiaChi, MODE_PRIVATE));
                       InformationUtil.writeToFile(res.getData().getNumberPhone().trim(),  openFileOutput(InformationUtil.FileSDT, MODE_PRIVATE));
                       InformationUtil.writeToFile(res.getData().getEmail().trim(), openFileOutput(InformationUtil.FileEmail, MODE_PRIVATE));
+                      InformationUtil.writeToFile(res.getData().getUid().toString().trim(), openFileOutput(InformationUtil.FileUid, MODE_PRIVATE));
                       Intent intent = new Intent(Login.this, NavigationMain.class);
                       startActivity(intent);
                   }catch (Exception e)

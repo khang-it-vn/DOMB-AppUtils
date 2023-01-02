@@ -5,7 +5,7 @@
     android:id="@+id/fragment_profile"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FBF6F6">
+    android:background="#FAF8F8">
 
     <TextView
         android:id="@+id/txtNameProfile"
@@ -45,6 +45,7 @@
         android:layout_width="408dp"
         android:layout_height="479dp"
         android:layout_marginTop="120dp"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
