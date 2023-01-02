@@ -108,7 +108,7 @@ App tiện ích cuộc sống, đồ án môn lập trình di động nên chư�
       API:
       ==> Method: [PATCH] 
       ==> URL:    domain/v1/api/User/EditInfo
-      ==> Param:  @UserEditProfileModel{
+      ==> Body:  @UserEditProfileModel{
                                           uid: Guid(c#) || UUID(Java),
                                           hoTen: String,
                                           diaChi: String,
@@ -153,7 +153,7 @@ App tiện ích cuộc sống, đồ án môn lập trình di động nên chư�
       API:
       ==> Method: [PATCH] 
       ==> URL:    domain/v1/api/Repairer/Active
-      ==> Param:  ID: String
+      ==> Param:  id: String
 
       Response: 
               {
