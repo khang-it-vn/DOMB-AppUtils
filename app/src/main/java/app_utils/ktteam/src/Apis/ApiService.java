@@ -10,11 +10,13 @@ import app_utils.ktteam.src.Apis.Prototypes.DataListRepairerDistanceApiResponse;
 import app_utils.ktteam.src.Apis.Prototypes.DataUserApiResponse;
 import app_utils.ktteam.src.Models.TaiKhoan;
 import app_utils.ktteam.src.Models.TaiKhoanModel;
+import app_utils.ktteam.src.Models.UserEditProfileModel;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -37,6 +39,9 @@ public interface ApiService {
     // Tìm kiếm thợ sửa chữa gần đây
     @GET("User/GetRepairerArround")
     Call<DataListRepairerDistanceApiResponse> getRepairerArround(@Query("diaChi") String diaChi);
+
+    @PATCH("User/EditInfo")
+    Call<DataUserApiResponse> updateInformation(@Body UserEditProfileModel model);
 
 
 

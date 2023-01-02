@@ -2,17 +2,122 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_profile"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FBF6F6">
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="203dp"
-        android:layout_height="13dp"
-        android:layout_marginTop="260dp"
-        android:text="Profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.557"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/txtNameProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        android:text="Huỳnh Thi Văn ABCD"
+        android:textColor="#1B1919"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView15"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="129dp"
+        android:layout_height="114dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profile" />
+
+    <ImageView
+        android:id="@+id/imgEditProfile"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtNameProfile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/edit" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="408dp"
+        android:layout_height="479dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameProfile">
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="41dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="56dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/telephone" />
+
+        <TextView
+            android:id="@+id/txtPhoneProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="56dp"
+            android:text="0987654321"
+            android:textColor="#1B1919"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView18"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="40dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="56dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPhoneProfile"
+            app:srcCompat="@drawable/address" />
+
+        <TextView
+            android:id="@+id/txtDiaChiProFile"
+            android:layout_width="276dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="56dp"
+            android:text="Hẻm 1502, Đường Nguyễn Duy Trinh, Phường Long Trường, Quận Thủ Đức"
+            android:textColor="#1B1919"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView19"
+            app:layout_constraintTop_toBottomOf="@+id/txtPhoneProfile" />
+
+        <ImageView
+            android:id="@+id/imageView20"
+            android:layout_width="40dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDiaChiProFile"
+            app:srcCompat="@drawable/email" />
+
+        <TextView
+            android:id="@+id/txtEmailProfile"
+            android:layout_width="275dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:text="huynhthikimthoa@123gmail.com"
+            android:textColor="#1B1919"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView20"
+            app:layout_constraintTop_toBottomOf="@+id/txtDiaChiProFile" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
