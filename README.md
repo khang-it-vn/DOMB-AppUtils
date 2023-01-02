@@ -112,8 +112,6 @@ App tiện ích cuộc sống, đồ án môn lập trình di động nên chư�
                                           uid: Guid(c#) || UUID(Java),
                                           hoTen: String,
                                           diaChi: String,
-                                          dob: DateTime (ISO),
-                                          gioiTinh: bool,
                                           email: String
                                           }
 
@@ -124,7 +122,39 @@ App tiện ích cuộc sống, đồ án môn lập trình di động nên chư�
                 Success =  success ? true: false 
               }
       
+## 9. So sánh mã PIN
       
+      UI Flow:
+      Khi người dùng nhập mã code bấm xác nhân sẽ thực hiện gọi api
+      
+      API:
+      ==> Method: [GET] 
+      ==> URL:    domain/v1/api/User/CompareCode
+      ==> Param:  uid: UUID, code: int
+      Response: 
+              {
+                Data= success ? @User : null,
+                Message= "Compare code random of user" ,
+                Success =  success ? true: false 
+              }
+              
+## Cập nhật mật khẩu mới
+      
+      UI Flow:
+      Sau khi xác nhận mã đúng, hiển thị khung cập nhật mật khẩu cho user
+      
+      API:
+      ==> Method: [PATCH] 
+      ==> URL:    domain/v1/api/User/UpdatePassword
+      ==> Param:  uid: UUID, matKhau: String
+      Response: 
+              {
+                Data= success ? @User : null,
+                Message= success ? "Update Password" : @ErrorMessage,
+                Success =  success ? true: false 
+              }
+
+
 ## Chức năng của thợ sửa chữa
 > Thợ sửa chữa
 ## 1. Đăng nhập
