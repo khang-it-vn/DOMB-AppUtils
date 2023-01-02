@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 
 import app_utils.ktteam.src.Apis.Prototypes.DataListRepairerApiResponse;
+import app_utils.ktteam.src.Apis.Prototypes.DataListRepairerDistanceApiResponse;
 import app_utils.ktteam.src.Apis.Prototypes.DataUserApiResponse;
 import app_utils.ktteam.src.Models.TaiKhoan;
 import app_utils.ktteam.src.Models.TaiKhoanModel;
@@ -33,11 +34,9 @@ public interface ApiService {
     Call<DataUserApiResponse> createAccount(@Body TaiKhoanModel taiKhoanModel);
 
 
-    // Thông tin thợ sửa chữa gần đây
+    // Tìm kiếm thợ sửa chữa gần đây
     @GET("User/GetRepairerArround")
-    Call<DataListRepairerApiResponse> getRepairerArround(@Query("latitude") String latitude, @Query("longitude") String longitude);
-
-
+    Call<DataListRepairerDistanceApiResponse> getRepairerArround(@Query("diaChi") String diaChi);
 
 
 
