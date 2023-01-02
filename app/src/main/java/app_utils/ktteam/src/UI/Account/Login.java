@@ -1,8 +1,7 @@
 package app_utils.ktteam.src.UI.Account;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,11 +10,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import app_utils.ktteam.src.Apis.ApiService;
 import app_utils.ktteam.src.Apis.Prototypes.DataUserApiResponse;
 import app_utils.ktteam.src.Models.TaiKhoan;
 import app_utils.ktteam.src.R;
 import app_utils.ktteam.src.UI.Homes.NavigationMain;
+import app_utils.ktteam.src.Utils.InformationUtil;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -60,8 +62,18 @@ public class Login extends AppCompatActivity {
 
                if(res != null && res.isSuccess())
                {
-                   Intent intent = new Intent(Login.this, NavigationMain.class);
-                   startActivity(intent);
+
+                  try {
+                      InformationUtil.writeToFile(res.getData().getHoTen().trim(),  openFileOutput(InformationUtil.FileHoTen, MODE_PRIVATE));
+                      InformationUtil.writeToFile(res.getData().getDiaChi().trim(), openFileOutput(InformationUtil.FileDiaChi, MODE_PRIVATE));
+                      InformationUtil.writeToFile(res.getData().getNumberPhone().trim(),  openFileOutput(InformationUtil.FileSDT, MODE_PRIVATE));
+                      InformationUtil.writeToFile(res.getData().getEmail().trim(), openFileOutput(InformationUtil.FileEmail, MODE_PRIVATE));
+                      Intent intent = new Intent(Login.this, NavigationMain.class);
+                      startActivity(intent);
+                  }catch (Exception e)
+                  {
+                      Toast.makeText(Login.this,e.getMessage(),Toast.LENGTH_LONG);
+                  }
                     return;
                }
 
@@ -75,6 +87,12 @@ public class Login extends AppCompatActivity {
        });
 
 
+    }
+
+    public void ClickRegister(View view){
+        Intent intent = new Intent(Login.this, Register.class);
+        startActivity(intent);
+        return;
     }
 
 

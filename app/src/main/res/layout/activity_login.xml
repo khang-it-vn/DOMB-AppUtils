@@ -109,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="28dp"
-        android:onClick=""
+        android:onClick="ClickRegister"
         android:text="Đăng Ký"
         android:textColor="#445DE8"
         android:textStyle="bold"
