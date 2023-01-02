@@ -100,7 +100,29 @@ App tiện ích cuộc sống, đồ án môn lập trình di động nên chư�
                 Message= "Get Repairer Arround",
                 Success =  true 
               }
+
+## 8. Chỉnh sửa thông tin cá nhấn
+      UI Flow:
+      Thông tin cá nhân của user chỉ được sửa chữa các trường như: Ngày tháng năm sinh, giới tính, họ tên, email, địa chỉ
       
+      API:
+      ==> Method: [PATCH] 
+      ==> URL:    domain/v1/api/User/EditInfo
+      ==> Param:  @UserEditProfileModel{
+                                          uid: Guid(c#) || UUID(Java),
+                                          hoTen: String,
+                                          diaChi: String,
+                                          dob: DateTime (ISO),
+                                          gioiTinh: bool,
+                                          email: String
+                                          }
+
+      Response: 
+              {
+                Data= success ? @User : null,
+                Message= sucess ? "Edit info user" : @ErrorMessage,
+                Success =  success ? true: false 
+              }
       
       
 ## Chức năng của thợ sửa chữa
