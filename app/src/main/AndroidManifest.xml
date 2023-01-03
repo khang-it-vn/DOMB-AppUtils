@@ -2,11 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="app_utils.ktteam.src">
-<!--    Yêu cầu cấp quyền gọi điện-->
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-<!--    yêu cầu cấp phép truy cập mạng-->
+    <!-- Yêu cầu cấp quyền gọi điện -->
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- yêu cầu cấp phép truy cập mạng -->
     <uses-permission android:name="android.permission.INTERNET" />
-
 
     <application
         android:allowBackup="true"
@@ -20,6 +18,27 @@
         android:theme="@style/Theme.AppUtils"
         tools:targetApi="31">
         <activity
+            android:name=".UI.Account.ChangePassword"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UI.Account.XacNhanForgetPassword"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UI.Account.ForgotPassword"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".UI.Profiles.Profile"
             android:exported="false" />
         <activity
@@ -30,9 +49,7 @@
             android:exported="false" />
         <activity
             android:name=".UI.Homes.NavigationMain"
-            android:exported="false" >
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".UI.Account.Register"
             android:exported="false" />

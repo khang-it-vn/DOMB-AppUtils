@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 import app_utils.ktteam.src.Apis.Prototypes.DataListRepairerApiResponse;
 import app_utils.ktteam.src.Apis.Prototypes.DataListRepairerDistanceApiResponse;
@@ -43,6 +44,15 @@ public interface ApiService {
     @PATCH("User/EditInfo")
     Call<DataUserApiResponse> updateInformation(@Body UserEditProfileModel model);
 
+    //Quên Mật Khẩu
+    @GET("User/CompareCode")
+    Call<DataUserApiResponse> checkCode(@Query("uid") UUID uuid, @Query("code") int code);
 
+    // Lấy uid bằng số điện thoại
+    @GET("User/GetUIDByNumberPhone")
+    Call<DataUserApiResponse> getUUIDByNumberPhone(@Query("numberPhone") String soDienThoai);
+
+    @PATCH("User/UpdatePassword")
+    Call<DataUserApiResponse> updatePassword(@Query("uid") UUID uuid, @Query("matKhau") String matKhau);
 
 }

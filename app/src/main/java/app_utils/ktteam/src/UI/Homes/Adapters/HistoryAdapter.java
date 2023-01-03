@@ -9,12 +9,15 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import app_utils.ktteam.src.ENVIROMENT;
 import app_utils.ktteam.src.Entities.ERepaierDistance;
 import app_utils.ktteam.src.R;
+import app_utils.ktteam.src.Utils.LoadImageUtil;
 
 public class HistoryAdapter extends BaseAdapter {
     private Context context;
@@ -52,7 +55,9 @@ public class HistoryAdapter extends BaseAdapter {
         TextView txtHoTenHistory = view.findViewById(R.id.txtHoTenHistory);
         Button btnPhoneHistory = view.findViewById(R.id.btnPhoneHistory);
         ImageButton imgButtonMapHistory = view.findViewById(R.id.imgButtonMapHistory);
+        ImageView imgViewAvatarHistory = view.findViewById(R.id.imgViewAvatarHistory);
 
+        setImage(imgViewAvatarHistory,repaierDistance.getAvatar());
         txtHoTenHistory.setText(repaierDistance.getHoTen());
 
         btnPhoneHistory.setText(repaierDistance.getNumberPhone());
@@ -79,5 +84,8 @@ public class HistoryAdapter extends BaseAdapter {
             }
         });
         return view;
+    }
+    private void setImage( ImageView img, String avatar) {
+        LoadImageUtil.loadImageFor(new LoadImageUtil(img, ENVIROMENT.DOMAIN_GET_IMAGE,avatar));
     }
 }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imgViewAvatarSuaDien"
         android:layout_width="103dp"
         android:layout_height="108dp"
         android:layout_marginStart="16dp"
@@ -24,7 +24,7 @@
         android:background="@drawable/custome_btn_call"
         android:text="Liên hệ"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintStart_toEndOf="@+id/imgViewAvatarSuaDien"
         app:layout_constraintTop_toBottomOf="@+id/txtKhoangCachSuaDien" />
 
     <TextView
@@ -35,7 +35,7 @@
         android:layout_marginTop="24dp"
         android:text="Nguyễn Văn C"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintStart_toEndOf="@+id/imgViewAvatarSuaDien"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -54,7 +54,7 @@
         android:layout_height="28dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="4dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintStart_toEndOf="@+id/imgViewAvatarSuaDien"
         app:layout_constraintTop_toBottomOf="@+id/txtHoTenSuaDien"
         app:srcCompat="@drawable/location" />
 
