@@ -215,7 +215,17 @@ App tiện ích cuộc sống, đồ án môn lập trình di động nên chư�
                 Message= "Information Of User",
                 Success = success ? true : false
               }
-              
+## 5. Lấy hình ảnh bằng tên ảnh
+
+      API:
+      ==> Method: [GET] 
+      ==> URL:    domain/v1/api/Repairer/GetImageByName
+      ==> Param:  imageName: String
+
+      Response: 
+              {
+                File : "image/png"
+              }
       
       
       
