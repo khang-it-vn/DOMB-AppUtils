@@ -13,6 +13,8 @@ public class InformationUtil {
     public final static String FileDiaChi = "DiaChi.txt";
     public final static String FileEmail = "Email.txt";
     public final static String FileUid = "Uid.txt";
+    public final static String FileAvatar = "Avatar.txt";
+
 
 
     public static void writeToFile(String data,  FileOutputStream fos) {

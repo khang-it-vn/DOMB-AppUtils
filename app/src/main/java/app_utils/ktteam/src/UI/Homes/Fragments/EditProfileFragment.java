@@ -24,10 +24,12 @@ import java.util.UUID;
 
 import app_utils.ktteam.src.Apis.ApiService;
 import app_utils.ktteam.src.Apis.Prototypes.DataUserApiResponse;
+import app_utils.ktteam.src.ENVIROMENT;
 import app_utils.ktteam.src.Models.UserEditProfileModel;
 import app_utils.ktteam.src.R;
 import app_utils.ktteam.src.UI.Account.Login;
 import app_utils.ktteam.src.Utils.InformationUtil;
+import app_utils.ktteam.src.Utils.LoadImageUtil;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -46,6 +48,8 @@ public class EditProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_edit_profile,container,false);
         init(view);
         setImageViewOnClickListener(btnChangeInforEditProfile, R.id.fragment_edit_profile,new ProfileFragment());
+        // lấy và hiển thị avatar
+        setImage();
         return view;
     }
 
@@ -120,6 +124,15 @@ public class EditProfileFragment extends Fragment {
 
             }
         });
+
+    }
+    private void setImage() {
+        try {
+            String avatar = InformationUtil.readToFile(getActivity().openFileInput(InformationUtil.FileAvatar));
+            LoadImageUtil.loadImageFor(new LoadImageUtil(imgEditProfile, ENVIROMENT.DOMAIN_GET_IMAGE,avatar));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
     }
 }

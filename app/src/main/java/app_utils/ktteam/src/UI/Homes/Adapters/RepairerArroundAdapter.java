@@ -14,13 +14,17 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 
 import app_utils.ktteam.src.Data.RepaierDistance;
 import app_utils.ktteam.src.DatabaseContext.RepairerDatabase;
+import app_utils.ktteam.src.ENVIROMENT;
 import app_utils.ktteam.src.Entities.ERepaierDistance;
 import app_utils.ktteam.src.R;
+import app_utils.ktteam.src.Utils.InformationUtil;
+import app_utils.ktteam.src.Utils.LoadImageUtil;
 
 public class RepairerArroundAdapter extends BaseAdapter {
 
@@ -58,12 +62,18 @@ public class RepairerArroundAdapter extends BaseAdapter {
         TextView txtTenThoSua = view.findViewById(R.id.txtHoTenSuaDien);
         TextView txtKhoangCach = view.findViewById(R.id.txtKhoangCachSuaDien);
         Button btnCallSuaDien = view.findViewById(R.id.btnCallSuaDien);
+        ImageView imgViewAvatarSuaDien = view.findViewById(R.id.imgViewAvatarSuaDien);
+        // set image
 
         RepaierDistance repaierDistance = repaierDistances.get(i);
         txtTenThoSua.setText(repaierDistance.getHoTen());
         // làm tròn khoảng cách về 2 chữ số thập phân
         double roundOff = Math.round(repaierDistance.getDistance() * 100.0) / 100.0;
         txtKhoangCach.setText( roundOff+ " m");
+
+
+        setImage(imgViewAvatarSuaDien, repaierDistance.getAvatar());
+
 
         txtKhoangCach.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,6 +128,9 @@ public class RepairerArroundAdapter extends BaseAdapter {
         {
             System.out.println(e.getMessage());
         }
+    }
+    private void setImage( ImageView img, String avatar) {
+            LoadImageUtil.loadImageFor(new LoadImageUtil(img, ENVIROMENT.DOMAIN_GET_IMAGE,avatar));
     }
 
 

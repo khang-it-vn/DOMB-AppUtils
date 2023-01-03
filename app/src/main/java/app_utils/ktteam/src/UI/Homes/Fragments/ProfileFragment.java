@@ -13,11 +13,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import java.io.FileNotFoundException;
+
+import app_utils.ktteam.src.ENVIROMENT;
 import app_utils.ktteam.src.R;
 import app_utils.ktteam.src.Utils.InformationUtil;
+import app_utils.ktteam.src.Utils.LoadImageUtil;
 
 public class ProfileFragment extends Fragment {
-    ImageView imgEditProfile;
+    ImageView imgEditProfile, imageViewAvatar;
     TextView txtNameProfile, txtDiaChiProfile, txtSDTProfile, txtEmailProfile;
     @Nullable
     @Override
@@ -26,7 +29,18 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile,container,false);
         init(view);
         setImageViewOnClickListener(imgEditProfile, R.id.fragment_profile,new EditProfileFragment());
+        setImage();
         return view;
+    }
+
+    private void setImage() {
+        try {
+            String avatar = InformationUtil.readToFile(getActivity().openFileInput(InformationUtil.FileAvatar));
+            LoadImageUtil.loadImageFor(new LoadImageUtil(imageViewAvatar, ENVIROMENT.DOMAIN_GET_IMAGE,avatar));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public  void init(View view){
@@ -35,6 +49,7 @@ public class ProfileFragment extends Fragment {
         txtNameProfile = view.findViewById(R.id.txtNameProfile);
         txtSDTProfile = view.findViewById(R.id.txtPhoneProfile);
         txtEmailProfile = view.findViewById(R.id.txtEmailProfile);
+        imageViewAvatar = view.findViewById(R.id.imgViewAvatarProfile);
         try {
             txtDiaChiProfile.setText(InformationUtil.readToFile(getActivity().openFileInput(InformationUtil.FileDiaChi)));
             txtSDTProfile.setText(InformationUtil.readToFile(getActivity().openFileInput(InformationUtil.FileSDT)));
